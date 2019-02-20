@@ -1,0 +1,26 @@
+
+
+        <table mat-table [dataSource]="resas" matSort matSortActive="dateTournee" matSortDisableClear matSortDirection="desc" class="example-container mat-elevation-z8"
+             >
+              
+                <ng-container matColumnDef="dateTournee">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+                    Date tournée
+                  </th>
+                  <td mat-cell *matCellDef="let resa">{{ resa.getTourDate() | momentPipe:'DD-MM-YYYY' }}</td>
+                </ng-container>
+                <ng-container matColumnDef="heureTournee">
+                    <th mat-header-cell *matHeaderCellDef >Heure </th>
+                    <td mat-cell *matCellDef="let resa">{{ resa.getTourDate() | momentPipe }}h </td>
+                  </ng-container>
+                  <ng-container matColumnDef="placeReservee">
+                      <th mat-header-cell *matHeaderCellDef >
+                      Nombre de place(s):
+                    </th>
+                    <td mat-cell *matCellDef="let resa">{{ resa.getPlace()}}</td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                </table>
+  

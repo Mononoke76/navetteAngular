@@ -1,0 +1,46 @@
+
+
+
+<h1 mat-dialog-title>Paiement</h1>
+<div mat-dialog-content>
+    <form [formGroup]="paymentForm">
+        
+            <mat-card>{{data.place}} places, A régler: {{calculerPrix()}} <mat-icon class="material-icons">euro_symbol</mat-icon></mat-card>
+          
+        <fieldset>
+          <mat-form-field class="example-full-width">
+          <input formControlName="numeroCB" matInput type="text" placeholder="N° de carte" required>
+        </mat-form-field>
+        <ng-container *ngFor="let validation of validationMessages.numeroCB">
+            <div class="error-message" *ngIf="numeroCB.hasError(validation.type) && (numeroCB.dirty || numeroCB.touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+          <label>Expiration</label>
+          
+          <mat-form-field>
+          <mat-select formControlName="month" placeholder="mois" size="1">
+      
+            <mat-option *ngFor="let mois of moiS" value={{mois}}>{{mois}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-select formControlName="year" placeholder="Année" size="1">
+           <mat-option *ngFor="let annee of annees" value={{annee}}>{{annee}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input  formControlName="crypto" matInput type="text" placeholder="Cryptogramme" required>
+        </mat-form-field>
+        </fieldset>
+        
+        <fieldset>
+          <button mat-button (click)="onNoClick()">No Thanks</button>
+          <button mat-raised-button type="submit" mat-dialog-close="data" (click)="paiementOk()" [disabled]="paymentForm.invalid">Payer</button>
+        </fieldset>
+      </form>
+  
+  
+</div>

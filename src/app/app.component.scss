@@ -1,0 +1,34 @@
+.morning{
+    color: rgb(65, 65, 185);
+    &.clicked{
+        background-color: rgb(65, 65, 185);
+        color: white;
+    }
+}
+
+.afternoon{
+    color: rgb(28, 127, 134);
+    &.clicked{
+        background-color: rgb(28, 127, 134);
+        color: white;
+    }
+}
+li{
+    cursor:pointer;
+  
+}
+
+.badge{
+    background-color: rgba(173, 168, 168, 0.384);
+}
+
+.text{
+    color:black;
+}
+.disabled{
+    color:black;
+}
+
+
+
+

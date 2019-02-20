@@ -1,0 +1,12 @@
+<ul class="list list-unstyled">
+  <li *ngFor="let tournee of tournees">
+    <div   [appResaAuto]="tournee"
+     [ngClass]="{'alert':true, 'alert-success':true,'morning':tournee.am, 'afternoon':!tournee.am}" 
+    > 
+    <button mat-fab disabled class="text"> {{tournee.hour | momentPipe}}h</button>
+          
+          <div ><span class="icon-users"></span><span class="badge">Places: {{tournee.dispo}}</span></div>
+          <app-my-component  [tour]="tournee" ></app-my-component>
+          </div>
+        </li>
+      </ul>

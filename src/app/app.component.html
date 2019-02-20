@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+  <div class="container-fluid">
+     
+        <header style="text-align:center">
+          <mat-toolbar>
+              <button mat-icon-button >
+                  <mat-icon class="material-icons" [matMenuTriggerFor]="menu">dehaze_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" >
+                  <button mat-menu-item><a routerLink="mesresas">
+                    <mat-icon>list</mat-icon>
+                    <span>Mes réservations</span>
+                    </a>
+                  </button>
+                  <button mat-menu-item><a routerLink="">
+                    <mat-icon>list</mat-icon>
+                    <span>Tournées</span>
+                    </a>
+                  </button>
+                  </mat-menu>
+            <h1>{{now | momentPipe:'DD-MM-YYYY'}}</h1>
+            <button mat-icon-button >
+              <mat-icon class="material-icons">search_vert</mat-icon>
+            </button>
+            <button mat-icon-button >
+              <mat-icon class="material-icons">more_vert</mat-icon>
+            </button>
+      
+          </mat-toolbar>
+            
+            
+        </header>
+          <!--Afficher les tournées du jour-->
+        <main>
+                
+                
+                <router-outlet></router-outlet>
+        </main>
+      
+          
+          
+  </div>
+  
